@@ -2,8 +2,7 @@ version: '2'
 
 services:
   drupal:
-    image: custom-drupal
-    build: .
+    image: drupal:8.8.2
     ports:
       - '8080:80'
     volumes:
@@ -18,8 +17,3 @@ services:
     image: postgres:12.1
     environment:
       - POSTGRES_PASSWORD=changeme
-    volumes:
-      - drupal-data:/var/lib/postgresql/data
-
-volumes:
-  drupal-data: null
